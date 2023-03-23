@@ -12,25 +12,51 @@ describe('Turn', () =>{
 
   it.skip('should be an instance of a turn', () => {
     const card = new Card();
-    const turn = new Turn('answer', card)
+    const turn = new Turn('guess', card)
     expect(turn).to.be.an.instanceOf(Turn);
   });
 
-  it.skip('should have a guess', () =>{})
+  it.skip('should check for guess and new card', () => {
+    const card = new Card(1, 'What is the color of Gokus normal fight attire', ['pink', 'red', 'black', 'orange'], 'orange');
+    const turn = new Turn('orange', card);
 
-  it.skip('should have a card', () =>{})
+    expect(turn.guess).to.equal('orange');
+    expect(turn.card).to.deep.equal(card);
+  })
+  it.skip('should return a guess', () =>{
+    const card = new Card(2, 'What is the race of Piccolo from Drangon Ball Z?', ['namekian', 'sayin', 'human'], 'namekian');
+    const turn = new Turn('namekian', card);
+    expect(turn.returnGuess()).to.qual('namekian')
+  });
 
-  it.skip('should return a guess', () =>{})
+  it.skip('should return a card', () =>{
+    const card = new Card(2, 'What is the race of Piccolo from Drangon Ball Z?', ['namekian', 'sayin', 'human'], 'namekian');
+    const turn = new Turn('namekian', card);
+    expect(turn.returnCard()).to.deep.equal(card)
+  });
 
-  it.skip('should return a card', () =>{})
+  it.skip('should state if guess is correct', () =>{
+    const card = new Card(3, 'What is the name of the Dragon Ball character with a third eye?', ['freiza', 'shenron', 'tien', 'chowzu'], 'tien');
+    const turn = new Turn('tien', card);
+    expect(turn.evaluateGuess()).to.be.equal(true)
+  });
 
-  it.skip('should state if guess is correct', () =>{})
-
-  it.skip('should state if guess is incorrect', () =>{})
+  it.skip('should state if guess is incorrect', () =>{
+    const card = new Card(3, 'What is the name of the Dragon Ball character with a third eye?', ['freiza', 'shenron', 'tien', 'chowzu'], 'tien');
+    const turn = new Turn('chowzu', card);
+    expect(turn.evaluateGuess()).to.be.equal(false)
+  });
 
   it.skip('should state if a guess is true', () =>{})
+  const card = new Card(3, 'What is the name of the Dragon Ball character with a third eye?', ['freiza', 'shenron', 'tien', 'chowzu'], 'tien');
+  const turn = new Turn('tien', card);
+  expect(turn.giveFeedback()).to.equal('AYE YOU ARE CORRECT!')
 
-  it.skip('should state if a guess is false', () =>{})
-  
+  it.skip('should state if a guess is false', () =>{
+    const card = new Card(3, 'What is the name of the Dragon Ball character with a third eye?', ['freiza', 'shenron', 'tien', 'chowzu'], 'tien');
+    const turn = new Turn('chowzu', card);
+    expect(turn.giveFeedback()).to.equal('YO YOU ARE WRONG!')
+  });
+
 
 })
