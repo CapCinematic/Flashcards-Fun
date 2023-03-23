@@ -23,13 +23,13 @@ describe('Turn', () =>{
     expect(turn.guess).to.equal('orange');
     expect(turn.card).to.deep.equal(card);
   })
-  it.skip('should return a guess', () =>{
+  it.skip('should return a guess', () => {
     const card = new Card(2, 'What is the race of Piccolo from Drangon Ball Z?', ['namekian', 'sayin', 'human'], 'namekian');
     const turn = new Turn('namekian', card);
     expect(turn.returnGuess()).to.qual('namekian')
   });
 
-  it.skip('should return a card', () =>{
+  it.skip('should return a card', () => {
     const card = new Card(2, 'What is the race of Piccolo from Drangon Ball Z?', ['namekian', 'sayin', 'human'], 'namekian');
     const turn = new Turn('namekian', card);
     expect(turn.returnCard()).to.deep.equal(card)
@@ -41,18 +41,19 @@ describe('Turn', () =>{
     expect(turn.evaluateGuess()).to.be.equal(true)
   });
 
-  it.skip('should state if guess is incorrect', () =>{
+  it.skip('should state if guess is incorrect', () => {
     const card = new Card(3, 'What is the name of the Dragon Ball character with a third eye?', ['freiza', 'shenron', 'tien', 'chowzu'], 'tien');
     const turn = new Turn('chowzu', card);
     expect(turn.evaluateGuess()).to.be.equal(false)
   });
 
-  it.skip('should state if a guess is true', () =>{})
-  const card = new Card(3, 'What is the name of the Dragon Ball character with a third eye?', ['freiza', 'shenron', 'tien', 'chowzu'], 'tien');
-  const turn = new Turn('tien', card);
-  expect(turn.giveFeedback()).to.equal('AYE YOU ARE CORRECT!')
+  it.skip('should state if a guess is true', () => {
+    const card = new Card(3, 'What is the name of the Dragon Ball character with a third eye?', ['freiza', 'shenron', 'tien', 'chowzu'], 'tien');
+    const turn = new Turn('tien', card);
+    expect(turn.giveFeedback()).to.equal('AYE YOU ARE CORRECT!')
+  })
 
-  it.skip('should state if a guess is false', () =>{
+  it.skip('should state if a guess is false', () => {
     const card = new Card(3, 'What is the name of the Dragon Ball character with a third eye?', ['freiza', 'shenron', 'tien', 'chowzu'], 'tien');
     const turn = new Turn('chowzu', card);
     expect(turn.giveFeedback()).to.equal('YO YOU ARE WRONG!')
