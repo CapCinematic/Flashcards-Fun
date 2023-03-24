@@ -149,6 +149,21 @@ const prototypeData = [{
   "question": "What type of methods are functions that allow you to manipulate the value of a particular data type or class?",
   "answers": ["prototype method", "object", "callback function"],
   "correctAnswer": "prototype method"
+}, {
+  "id": 31,
+  "question":'What is the color of Gokus normal fight attire',
+  "answers": ['pink', 'red', 'black', 'orange'],
+  "correctAnswer":'orange', 
+}, {
+  "id": 32,
+  "question": 'What is the race of Piccolo from Drangon Ball Z?',
+  "answers":  ['namekian', 'sayin', 'human'],
+  "correctAnswer": 'namekian',
+}, {
+  "id": 33,
+  "question": 'What is the name of the Dragon Ball character with a third eye?',
+  "answers": ['freiza', 'shenron', 'tien', 'chowzu'],
+  "correctAnswer":'tien'
 }]
 /* eslint-enable */
 
