@@ -41,60 +41,64 @@ describe("Round", () => {
   });
 
   it("should be a function", () => {
-    const round = new round();
+    const round = new Round();
     expect(Round).to.be.a("function");
   });
 
-  it.skip("should have a deck", () => {
+  it("should have a deck", () => {
     expect(round.deck).to.deep.equal(deck);
   });
 
-  it.skip("should start with no turns and no incorrect guesses taken", () => {
-    expect(round.turn).to.equal(0);
-    expect(round.incorrectGuesses).to.equal([]);
+  it("should start with no turns taken", () => {
+    expect(round.turns).to.equal(0);
   });
 
-  it.skip("it should return current card after a guess", () => {
+  it("should start no incorrect guesses taken", () => {
+    expect(round.incorrectGuesses).to.deep.equal([]);
+  });
+
+  it("it should return current card after a guess", () => {
     expect(round.returnCurrentCard()).to.deep.equal(card1);
   });
 
-  it.skip("it should be able to take a turn", () => {
-    expect(round.takeTurn("orange").to.be.instanceof(Turn));
+  it("it should be able to take a turn", () => {
+    round.takeTurn("orange");
+    expect(round.turns).to.equal(1);
   });
 
-  it.skip("it should update turn count", () => {
+  it("it should update turn count", () => {
     round.takeTurn("orange");
     expect(round.turns).to.equal(1);
     round.takeTurn("sayin");
     expect(round.turns).to.equal(2);
   });
 
-  it.skip("it should evaluate the guess", () => {
+  it("it should evaluate the guess", () => {
     round.takeTurn("orange");
     expect(round.incorrectGuesses).to.deep.equal([]);
     round.takeTurn("sayin");
-    expect(round.incorrectGuesses).to.deep.equal([2]);
+    expect(round.incorrectGuesses).to.deep.equal([card2Data]);
   });
 
-  it.skip("it should return feedback from the guess", () => {
+  it("it should return feedback from the guess", () => {
     expect(round.takeTurn("orange")).to.equal("AYE YOU ARE CORRECT!");
     expect(round.takeTurn("sayin")).to.equal("YO YOU ARE WRONG!");
   });
 
-  it.skip("it should calculate percent of correct guesses", () => {
+  it("it should calculate percent of correct guesses", () => {
     round.takeTurn("orange");
     round.takeTurn("sayin");
-    expect(round.CalculatePercentCorrect()).to.equal(50);
+    expect(round.calculatePercentCorrect()).to.equal(50);
     round.takeTurn("shenron");
-    expect(round.CalculatePercentCorrect()).to.equal(33);
+    expect(round.calculatePercentCorrect()).to.equal(33);
   });
 
-  it.skip("it should end the round and return percentage of correct guesses", () => {
+  it("it should end the round and return percentage of correct guesses", () => {
     round.takeTurn("orange");
     round.takeTurn("sayin");
     round.takeTurn("shenron");
     expect(round.endRound()).to.equal(
-      "** Round over! ** You answered <>% of the questions correctly!"
+      "** Round over! ** You answered 33% of the questions correctly!"
     );
   });
 });

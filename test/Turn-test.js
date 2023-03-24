@@ -3,6 +3,7 @@ const expect = chai.expect;
 
 const Turn = require('../src/Turn');
 const Card = require('../src/Card');
+const Round = require('../src/Round');
 
 describe('Turn', () =>{
   it('should be a function', () => {
