@@ -1,30 +1,30 @@
 class Turn {
-  constructor(guess, cardClass){
-    this.guess = guess
-    this.card = cardClass
+  constructor(guess, cardClass) {
+    this.guess = guess;
+    this.card = cardClass;
   }
 
   returnGuess = () => {
-    return this.guess
-  }
+    return this.guess;
+  };
 
   returnCard = () => {
-    return this.card
-  }
+    return this.card;
+  };
 
   evaluateGuess = () => {
-    if(this.guess === this.card.correctAnswer){
-      return true
-    } 
-    return false
-  }
+    if (this.guess === this.card.correctAnswer) {
+      return true;
+    }
+    return false;
+  };
 
   giveFeedBack = () => {
-    if(this.guess === this.card.correctAnswer){
-      return 'AYE YOU ARE CORRECT!'
-    } 
-    return 'YO YOU ARE WRONG!'
-  }
+    if (this.guess === this.card.correctAnswer) {
+      return "AYE YOU ARE CORRECT!";
+    }
+    return "YO YOU ARE WRONG!";
+  };
 }
 
-module.exports = Turn
+module.exports = Turn;

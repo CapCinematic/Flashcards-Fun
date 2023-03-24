@@ -1,7 +1,7 @@
 const chai = require("chai");
 const expect = chai.expect;
 
-const data = require('../src/data');
+const data = require("../src/data");
 const prototypeData = data.prototypeData;
 const Turn = require("../src/Turn");
 const Card = require("../src/Card");
@@ -9,29 +9,29 @@ const Deck = require("../src/Deck");
 const Round = require("../src/Round");
 
 describe("Round", () => {
-  const card1Data = prototypeData[30]
-  const card2Data = prototypeData[31]
-  const card3Data = prototypeData[32]
+  const card1Data = prototypeData[30];
+  const card2Data = prototypeData[31];
+  const card3Data = prototypeData[32];
   const card1 = new Card(
     card1Data.id,
     card1Data.question,
     card1Data.answers,
-    card1Data.correctAnswer,
+    card1Data.correctAnswer
   );
   const card2 = new Card(
     card2Data.id,
     card2Data.question,
     card2Data.answers,
-    card2Data.correctAnswer,
+    card2Data.correctAnswer
   );
   const card3 = new Card(
     card3Data.id,
     card3Data.question,
     card3Data.answers,
-    card3Data.correctAnswer,
+    card3Data.correctAnswer
   );
 
-  let deck; 
+  let deck;
   let round;
 
   beforeEach(() => {
