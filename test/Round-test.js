@@ -79,14 +79,14 @@ describe("Round", () => {
     round.takeTurn("orange");
     round.takeTurn("sayin");
     expect(round.CalculatePercentCorrect()).to.equal(50);
-    round.takeTurn("tien");
+    round.takeTurn("shenron");
     expect(round.CalculatePercentCorrect()).to.equal(33);
   });
 
   it.skip("it should end the round and return percentage of correct guesses", () => {
     round.takeTurn("orange");
     round.takeTurn("sayin");
-    round.takeTurn("tien");
+    round.takeTurn("shenron");
     expect(round.endRound()).to.equal(
       "** Round over! ** You answered <>% of the questions correctly!"
     );
